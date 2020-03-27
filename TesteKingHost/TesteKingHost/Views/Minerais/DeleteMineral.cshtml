@@ -1,0 +1,9 @@
+﻿@model Mineral
+@{
+    ViewData["Title"] = "DeleteMineral";
+    Layout = "~/Views/Shared/_mineralLayout.cshtml";
+}
+<form asp-action="DeleteMineral" method="post">
+    <input type="hidden" value="@Model.MineralId" name="MineralId" />
+    <input type="image" src="/icon/close.png" />
+</form>

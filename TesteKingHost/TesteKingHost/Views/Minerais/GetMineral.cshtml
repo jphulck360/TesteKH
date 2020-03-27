@@ -1,0 +1,41 @@
+﻿@model Mineral
+@{
+    ViewData["Title"] = "GetMineral";
+    Layout = "~/Views/Shared/_mineralLayout.cshtml";
+}
+<h2>Obter reserva pelo Id <a asp-action="Index" class="btn btn-sm btn-success">Retornar</a></h2>
+<form method="post">
+    <div class="form-group">
+        <label for="id">Id:</label>
+        <input class="form-control" name="id" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Obter Mineral</button>
+    </div>
+</form>
+@if (Model != null)
+{
+    <h2>Reserva</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Concluído</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.MineralId</td>
+                <td>@Model.MineralName</td>
+                <td>@Model.Description</td>
+                <td>@Model.Completed</td>
+                <td>@Model.CreatedAt</td>
+                <td>@Model.UpdatedAt</td>
+            </tr>
+        </tbody>
+    </table>
+}

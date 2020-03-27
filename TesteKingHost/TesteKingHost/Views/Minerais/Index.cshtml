@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Mineral>
+@{
+    ViewData["Title"] = "Todos Minerais";
+    Layout = "~/Views/Shared/_mineralLayout.cshtml";
+}
+<a asp-action="AddMineral" class="btn btn-sm btn-primary">Incluir Mineral</a>
+<a asp-action="GetMineral" class="btn btn-sm btn-secondary">Obter Mineral</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Concluído</th>
+            <th>Criado em</th>
+            <th>Atualizado em</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+        <tr>
+            <td>@m.MineralId</td>
+            <td>@m.MineralName</td>
+            <td>@m.Description</td>
+            <td>@m.Completed</td>
+            <td>@m.CreatedAt</td>
+            <td>@m.UpdatedAt</td>
+            <td>
+                <a asp-action="UpdateMineral" asp-route-id="@m.MineralId"><img src="/icon/edit.png" /></a>
+            </td>
+            <td>
+                <form asp-action="DeleteMineral" method="post">
+                    <input type="hidden" value="@m.MineralId" name="MineralId" />
+                    <input type="image" src="/icon/close.png" />
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
