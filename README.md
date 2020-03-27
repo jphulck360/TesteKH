@@ -1,7 +1,7 @@
 A Aplicação está organizada na seguinte forma:
 
-1) APIMineral
-2) TesteKingHost
+1) APIMineral (API)
+2) TesteKingHost (Aplicação exemplo para consumir os dados da API)
 
 
 
@@ -25,4 +25,4 @@ A Aplicação está organizada na seguinte forma:
 
 
 2.1)
-Foi criada uma aplicação para consumir os dados desta API.
+Foi criada uma aplicação de exemplo, para consumir os dados desta API.
